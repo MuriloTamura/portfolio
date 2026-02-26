@@ -107,20 +107,24 @@ skills.forEach((s, i) => {
 // ─────────────────────────────────────────
 const projects = [
   {
-    title: 'Sistema de Cadastro',
-    desc: 'CRUD completo com Java + Spring Boot + PostgreSQL. API REST com autenticação básica e conexão com banco de dados.',
-    tags: ['Java', 'Spring Boot', 'PostgreSQL'],
+    title: 'HolyDress',
+    desc: 'Loja virtual cristã, desenvolvida com foco em proporcionar uma experiência de compra agradável, segura e acolhedora, alinhada aos princípios e valores cristãos.',
+    tags: ['Javascrpipt', 'CSS', 'HTML'],
     kana: '登',
     icon: '⚙',
-    wip: true,
+    wip: false,
+    image: 'assets/holydress-preview.png',
+    link: 'https://github.com/lucaspgouv/Holydress',
   },
   {
-    title: 'Landing Page Responsiva',
-    desc: 'Página estática criada com HTML, CSS e JavaScript. Foco em responsividade, animações e boas práticas de acessibilidade.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
+    title: 'Sigej',
+    desc: 'Sistema de Gestão de Jardinagem e Manutenção do Campus Maracanaú. Projeto acadêmico desenvolvido para a disciplina de Banco de Dados',
+    tags: ['Java', 'Spring Boot', 'PostgresSql', 'Docker', 'Thymeleaf', 'CSS + HTML'],
     kana: '頁',
     icon: '◻',
     wip: false,
+    image: 'assets/sigej-preview.png',
+    link: 'https://github.com/MuriloTamura/sigej',
   },
   {
     title: 'Em Breve...',
@@ -138,10 +142,12 @@ projects.forEach((p, i) => {
   card.className = `project-card reveal reveal-delay-${i + 1}`;
   card.innerHTML = `
     <div class="project-thumb">
-      <span class="thumb-kana">${p.kana}</span>
-      <span class="thumb-icon">${p.icon}</span>
+      ${p.image
+        ? `<img src="${p.image}" alt="${p.title}" style="width:100%;height:100%;object-fit:cover;display:block;">`
+        : `<span class="thumb-kana">${p.kana}</span><span class="thumb-icon">${p.icon}</span>`
+      }
       <div class="project-overlay">
-        <a href="https://github.com/MuriloTamura" target="_blank">Ver no GitHub →</a>
+        <a href="${p.link || 'https://github.com/MuriloTamura'}" target="_blank">Ver no GitHub →</a>
       </div>
     </div>
     <div class="project-body">
