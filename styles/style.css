@@ -768,16 +768,216 @@ footer {
 }
 .torii-container { animation: torii-float 6s ease-in-out infinite; }
 
-/* RESPONSIVE */
+/* ─────────────────────────────────────────
+   RESPONSIVE — TABLET (max 1024px)
+───────────────────────────────────────── */
+@media (max-width: 1024px) {
+  nav { padding: 16px 32px; }
+  nav.scrolled { padding: 12px 32px; }
+  .nav-links { gap: 24px; }
+
+  #hero {
+    padding: 0 32px;
+    padding-top: 80px;
+    gap: 40px;
+  }
+  .hero-left { padding-left: 0; }
+  .torii-container { width: 260px; height: 340px; }
+
+  .section-inner { padding: 80px 32px; }
+
+  .about-grid { gap: 48px; }
+
+  .skills-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+
+  .contact-layout { gap: 48px; }
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — MOBILE (max 768px)
+───────────────────────────────────────── */
 @media (max-width: 768px) {
-  nav { padding: 16px 24px; }
-  nav.scrolled { padding: 12px 24px; }
-  .nav-links { display: none; }
-  #hero { grid-template-columns: 1fr; padding: 120px 24px 60px; }
-  .hero-right { display: none; }
-  .section-inner { padding: 80px 24px; }
-  .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .contact-layout { grid-template-columns: 1fr; gap: 40px; }
-  footer { flex-direction: column; gap: 16px; text-align: center; padding: 30px 24px; }
-  .projects-grid { grid-template-columns: 1fr; }
+
+  /* Cursor — ocultar no touch */
+  .cursor, .cursor-trail { display: none; }
+  body { cursor: auto; }
+
+  /* ── NAV ── */
+  nav {
+    padding: 14px 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  nav.scrolled { padding: 10px 20px; }
+  .nav-logo { font-size: 1rem; }
+  .nav-links {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 4px;
+  }
+  .nav-links a { font-size: 0.6rem; letter-spacing: 0.12em; }
+
+  /* ── HERO ── */
+  #hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 110px 20px 60px;
+    gap: 0;
+  }
+  .hero-left { padding-left: 0; }
+  .hero-kana { font-size: 3.5rem; top: -10px; left: -10px; }
+  .hero-greeting { font-size: 0.6rem; margin-bottom: 14px; }
+  .hero-name { font-size: clamp(2rem, 8vw, 3rem); }
+  .hero-typing { font-size: 0.8rem; }
+  .hero-tagline {
+    font-size: 0.78rem;
+    line-height: 1.7;
+    max-width: 100%;
+    margin-top: 16px;
+  }
+  .hero-cta {
+    margin-top: 28px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .btn-primary, .btn-secondary {
+    padding: 12px 24px;
+    font-size: 0.65rem;
+    text-align: center;
+  }
+
+  /* Torii — mostrar menor no mobile ao invés de sumir */
+  .hero-right {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    opacity: 1;
+    animation: none;
+  }
+  .torii-container {
+    width: 180px;
+    height: 240px;
+    animation: torii-float 6s ease-in-out infinite;
+  }
+
+  /* Linhas decorativas */
+  .hero-line-h { display: none; }
+  .hero-line-v { display: none; }
+  .scroll-indicator { display: none; }
+
+  /* ── SEÇÕES ── */
+  .section-inner { padding: 64px 20px; }
+  .section-title { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+  .section-title .jp { font-size: 0.75rem; }
+  .bg-kana { display: none; } /* remove kanas de fundo (poluem no mobile) */
+
+  /* ── SOBRE ── */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 40px;
+  }
+  .about-visual { max-width: 280px; margin: 0 auto; }
+  .about-tag {
+    bottom: -12px;
+    right: -8px;
+    padding: 10px 16px;
+    font-size: 0.6rem;
+  }
+  .about-content h3 { font-size: 1.3rem; }
+  .about-content p { font-size: 0.8rem; line-height: 1.9; }
+  .about-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 28px;
+    padding-top: 28px;
+  }
+  .stat-number { font-size: 2rem; }
+  .stat-label { font-size: 0.55rem; }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-top: 40px;
+  }
+  .skill-card { padding: 22px 18px; }
+  .skill-icon { font-size: 1.6rem; margin-bottom: 10px; }
+  .skill-name { font-size: 0.65rem; margin-bottom: 10px; }
+  .skill-level { font-size: 0.55rem; }
+
+  /* ── PROJETOS ── */
+  .projects-intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  .projects-note { max-width: 100%; font-size: 0.72rem; }
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .project-thumb { height: 180px; }
+  .project-body { padding: 20px; }
+  .project-title { font-size: 1.1rem; }
+  .project-desc { font-size: 0.72rem; }
+
+  /* overlay no mobile — sempre visível (sem hover) */
+  .project-overlay {
+    opacity: 0;
+    /* mantém tap para ver links */
+  }
+  .project-card:active .project-overlay { opacity: 1; }
+
+  /* ── CONTATO ── */
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    margin-top: 40px;
+  }
+  .contact-info p { font-size: 0.78rem; margin-bottom: 24px; }
+  .contact-link { font-size: 0.7rem; padding: 14px 12px; gap: 12px; }
+  .contact-link-icon { width: 32px; height: 32px; font-size: 0.9rem; flex-shrink: 0; }
+  .form-input, .form-textarea { font-size: 0.75rem; padding: 12px 14px; }
+  .btn-submit {
+    width: 100%;
+    text-align: center;
+    padding: 14px 24px;
+    clip-path: none;
+    font-size: 0.65rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    padding: 28px 20px;
+  }
+  .footer-logo { font-size: 0.9rem; }
+  .footer-copy { font-size: 0.55rem; }
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — MOBILE PEQUENO (max 400px)
+───────────────────────────────────────── */
+@media (max-width: 400px) {
+  .nav-links { gap: 10px; }
+  .nav-links a { font-size: 0.55rem; }
+
+  .hero-name { font-size: 1.8rem; }
+  .hero-tagline { font-size: 0.72rem; }
+
+  .skills-grid { grid-template-columns: 1fr; }
+  .skill-card { padding: 20px 16px; }
+
+  .about-stats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .stat-number { font-size: 1.6rem; }
+  .stat-label { font-size: 0.5rem; letter-spacing: 0.1em; }
+
+  .contact-link { word-break: break-all; }
 }
