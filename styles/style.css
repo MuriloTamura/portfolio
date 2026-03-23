@@ -351,15 +351,8 @@ section { position: relative; overflow: hidden; }
   overflow: hidden;
 }
 .about-frame::before {
-  content: '武';
-  font-family: 'Noto Serif JP', serif;
-  font-size: 16rem;
-  color: rgba(192,57,43,0.06);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: 700;
+  content: '';
+  display: none;
 }
 .about-frame-inner {
   position: absolute;
@@ -554,6 +547,25 @@ section { position: relative; overflow: hidden; }
   padding: 12px 24px;
 }
 .project-overlay a:hover { background: rgba(255,255,255,0.1); }
+  .project-overlay-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  .project-overlay-btns a {
+    color: var(--cream);
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 12px 24px;
+    width: 100%;
+    text-align: center;
+    transition: background 0.2s;
+  }
+  .project-overlay-btns a:hover { background: rgba(255,255,255,0.15); }
 .project-body { padding: 28px; }
 .project-tags {
   display: flex;

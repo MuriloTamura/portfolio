@@ -87,6 +87,9 @@ const skills = [
   { name: 'HTML & CSS',       kana: '形', level: 80, tag: 'Frontend'     },
   { name: 'PostgreSQL / SQL', kana: 'デ', level: 60, tag: 'Database'     },
   { name: 'Git & GitHub',     kana: '流', level: 65, tag: 'Ferramentas'  },
+  { name: 'Python',           kana: '蛇', level: 50, tag: 'Backend'      },
+  { name: 'Docker',           kana: '箱', level: 55, tag: 'DevOps'       },
+  { name: 'React',            kana: '輪', level: 45, tag: 'Frontend'     },
 ];
 
 const skillsGrid = document.getElementById('skillsGrid');
@@ -115,6 +118,7 @@ const projects = [
     wip: false,
     image: 'assets/holydress-preview.png',
     link: 'https://github.com/lucaspgouv/Holydress',
+    site: 'https://holydres.vercel.app',
   },
   {
     title: 'Sigej',
@@ -147,7 +151,14 @@ projects.forEach((p, i) => {
         : `<span class="thumb-kana">${p.kana}</span><span class="thumb-icon">${p.icon}</span>`
       }
       <div class="project-overlay">
-        <a href="${p.link || 'https://github.com/MuriloTamura'}" target="_blank">Ver no GitHub →</a>
+        ${p.site ? `
+          <div class="project-overlay-btns">
+            <a href="${p.link || 'https://github.com/MuriloTamura'}" target="_blank">Ver no GitHub →</a>
+            <a href="${p.site}" target="_blank">Ver o Site →</a>
+          </div>
+        ` : `
+          <a href="${p.link || 'https://github.com/MuriloTamura'}" target="_blank">Ver no GitHub →</a>
+        `}
       </div>
     </div>
     <div class="project-body">
