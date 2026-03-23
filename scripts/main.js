@@ -118,7 +118,7 @@ const projects = [
     wip: false,
     image: 'assets/holydress-preview.png',
     link: 'https://github.com/lucaspgouv/Holydress',
-    site: 'https://holydres.vercel.app',
+    site: 'https://holydress.vercel.app',
   },
   {
     title: 'Sigej',
