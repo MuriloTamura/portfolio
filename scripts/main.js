@@ -131,12 +131,23 @@ const projects = [
     link: 'https://github.com/MuriloTamura/sigej',
   },
   {
-    title: 'Em Breve...',
-    desc: 'Novos projetos estão sendo desenvolvidos. Acompanhe meu GitHub para ver o que estou construindo.',
-    tags: ['???', 'Em Breve'],
+    title: 'MusiCat',
+    desc: 'Um bot de música completo para Discord feito em Python, com suporte a filas, controle de reprodução, loop, volume e muito mais',
+    tags: ['Python'],
+    kana: '未',
+    icon: '✦',
+    wip: false,
+    image: 'assets/MusiCat.png',
+    link: 'https://github.com/MuriloTamura/MusiCat'
+  },
+  {
+    title: 'Em breve...',
+    desc: 'Mais projetos em andamento, fique de olho no meu github',
+    tags: ['Em breve'],
     kana: '未',
     icon: '✦',
     wip: true,
+    link: 'https://github.com/MuriloTamura'
   },
 ];
 
